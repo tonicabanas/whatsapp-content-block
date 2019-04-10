@@ -1,0 +1,23 @@
+{
+    "name": "Whatsapp Content Block",
+    "version": "1.0",
+    "description": "Allow you block some content or people in whatsapp web.",
+    "manifest_version": 2,
+    "permissions": [
+        "https://web.whatsapp.com/",
+        "declarativeContent"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.whatsapp.com/"
+            ],
+            "css": [
+                "css/main.css"
+            ],
+            "js": [
+                "js/main.js"
+            ]
+        }
+    ]
+}
