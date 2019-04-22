@@ -8,10 +8,8 @@ function modifyElement(element) {
         return;
     element.setAttribute("blocked", "true");
     if (element) {
-        console.log(element);
         let media = Media.factory(element);
         if (media) {
-            console.log(media);
             media.addHideButton();
             media.hideElement();
         }
@@ -69,11 +67,8 @@ class Image extends Media {
     }
 
     static isImage(msgElement) {
-        return false;
-        let imgs = msgElement.getElementsByTagName('img');
-        return Array.from(imgs).some(img => { return !img.className.includes('selectable-text'); });
+        return msgElement.getElementsByClassName('_3v3PK').length > 0;
     }
-
 }
 
 class Video extends Media {
