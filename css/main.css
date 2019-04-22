@@ -3,18 +3,20 @@
 }
 
 .buttonHide {
-    background-color: #008CBA;
+    background-color: #C5BEB7;
     border          : none;
     color           : white;
-    padding         : 10px 32px;
+    width           : 100%;
+    padding         : 16px;
     text-align      : center;
     text-decoration : none;
     display         : inline-block;
     font-size       : 16px;
-    margin          : 4px 2px;
     cursor          : pointer;
+    border-radius   : 0.5rem;
+    margin-top      : 2px;
 }
 
 .buttonHide:hover {
-    background-color: #006a8a;
+    background-color: #827D78;
 }
