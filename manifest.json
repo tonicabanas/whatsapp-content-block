@@ -16,6 +16,7 @@
                 "css/main.css"
             ],
             "js": [
+                "js/menu.js",
                 "js/main.js"
             ]
         }
@@ -24,5 +25,12 @@
         "16": "assets/icons/icon16.png",
         "48": "assets/icons/icon48.png",
         "128": "assets/icons/icon128.png"
-    }
+    },
+    "browser_action": {
+        "default_icon": "assets/icons/icon16.png"
+    },
+    "background": {
+        "scripts": ["js/menu.js"],
+        "persistent": false
+      }
 }

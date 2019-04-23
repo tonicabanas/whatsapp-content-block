@@ -1,3 +1,5 @@
+document.addEventListener('DOMNodeInserted', nodeInsertedCallback);
+
 function nodeInsertedCallback(event) {
     let elements = event.relatedNode.getElementsByClassName('message-in')
     Array.from(elements).map(element => modifyElement(element));
@@ -15,8 +17,6 @@ function modifyElement(element) {
         }
     }
 }
-
-document.addEventListener('DOMNodeInserted', nodeInsertedCallback);
 
 class Media {
 
