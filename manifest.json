@@ -5,7 +5,9 @@
     "manifest_version": 2,
     "permissions": [
         "https://web.whatsapp.com/",
-        "declarativeContent"
+        "declarativeContent",
+        "storage",
+        "webNavigation"
     ],
     "content_scripts": [
         {
@@ -16,9 +18,9 @@
                 "css/main.css"
             ],
             "js": [
-                "js/menu.js",
                 "js/main.js"
-            ]
+            ],
+            "run_at": "document_start"
         }
     ],
     "icons": {

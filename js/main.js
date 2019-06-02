@@ -1,8 +1,20 @@
-document.addEventListener('DOMNodeInserted', nodeInsertedCallback);
+let GLOBAL_ENABLE_WCB = false;
 
-function nodeInsertedCallback(event) {
-    let elements = event.relatedNode.getElementsByClassName('message-in')
-    Array.from(elements).map(element => modifyElement(element));
+document.addEventListener('DOMNodeInserted', function (event) {
+    nodeInsertedCallback(event, GLOBAL_ENABLE_WCB);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    chrome.storage.local.get(['enabled'], function (result) {
+        GLOBAL_ENABLE_WCB = result['enabled'];
+    });
+});
+
+function nodeInsertedCallback(event, enabled) {
+    if (enabled) {
+        let elements = event.relatedNode.getElementsByClassName('message-in')
+        Array.from(elements).map(element => modifyElement(element));
+    }
 }
 
 function modifyElement(element) {
@@ -45,7 +57,7 @@ class Media {
     }
 
     createButtonShowHideWidget() {
-        var button = document.createElement('button');
+        let button = document.createElement('button');
         button.innerHTML = 'Show';
         button.className = 'buttonHide';
         button.addEventListener('click', event => {
