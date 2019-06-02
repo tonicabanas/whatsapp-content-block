@@ -60,14 +60,14 @@ class Image extends Media {
 
     getBodyElement() {
         if (!this.bodyElement) {
-            let elements = this.element.getElementsByClassName('_3v3PK');
+            let elements = this.element.getElementsByClassName('_2I4z2');
             this.bodyElement = elements.length > 0 ? elements[0] : null;
         }
         return this.bodyElement;
     }
 
     static isImage(msgElement) {
-        return msgElement.getElementsByClassName('_3v3PK').length > 0;
+        return msgElement.getElementsByClassName('_2I4z2').length > 0;
     }
 }
 
