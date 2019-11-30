@@ -1,6 +1,6 @@
 {
     "name": "Whatsapp Content Block",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Allows you to block media in WhatsApp web to avoid NSFW content.",
     "manifest_version": 2,
     "permissions": [
