@@ -12,13 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function nodeInsertedCallback(event, enabled) {
     if (enabled) {
-        let elements = event.relatedNode.getElementsByClassName('message-in')
+        let elements = event.relatedNode.getElementsByClassName('message-in');
         Array.from(elements).map(element => modifyElement(element));
     }
 }
 
 function modifyElement(element) {
-    console.log("HOLA");
     if (element.getAttribute("blocked") === "true")
         return;
     element.setAttribute("blocked", "true");
@@ -73,14 +72,14 @@ class Image extends Media {
 
     getBodyElement() {
         if (!this.bodyElement) {
-            let elements = this.element.getElementsByClassName('_3mdDl');
+            let elements = this.element.getElementsByClassName('_1mTER');
             this.bodyElement = elements.length > 0 ? elements[0] : null;
         }
         return this.bodyElement;
     }
 
     static isImage(msgElement) {
-        return msgElement.getElementsByClassName('_3mdDl').length > 0;
+        return msgElement.getElementsByClassName('_1mTER').length > 0;
     }
 }
 
@@ -88,13 +87,13 @@ class Video extends Media {
 
     getBodyElement() {
         if (!this.bodyElement) {
-            let elements = this.element.getElementsByClassName('video-thumb');
+            let elements = this.element.getElementsByClassName('_2nJ1e');
             this.bodyElement = elements.length > 0 ? elements[0] : null;
         }
         return this.bodyElement;
     }
 
     static isVideo(msgElement) {
-        return msgElement.getElementsByClassName('video-thumb').length > 0;
+        return msgElement.getElementsByClassName('_2nJ1e').length > 0;
     }
 }
